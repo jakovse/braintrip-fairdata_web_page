@@ -1,4 +1,4 @@
-const filePath = "http://localhost:8081/eegRecordings/"
+const filePath = "https://github.com/jakovse/braintrip-fairdata_web_page/tree/master/eegRecordings/"
 const selectedRows = new Array(500).fill(false);
 
 function runFilter() {
