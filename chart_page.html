@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>BrainTrip x Swarm (EEG chart)</title>
+    <link rel="shortcut icon" href="#">
+  </head>
+  <body>
+  <!-- Title div -->
+  <div class="w3-content" style="max-width:2000px;margin-top:36px">    
+    <div class="w3-container w3-content w3-center" style="max-width:800px">
+      <!--<img src="./assets/BrainTrip_logo2.png" alt="" style="max-width: 400px; padding-top: 20px;">-->
+      <div>
+        <h2 class="w3-wide" id="recTitle"></h2>
+      </div>
+      <div id="recData" style="margin-bottom: 10px;">
+      </div>
+      <!-- Add recording values that had been read from header -->
+    </div>
+  </div>
+  <!-- chart div -->
+  <div class="w3-container w3-content w3-center" style="max-width:1400px;">
+    <canvas id="myChart" style="height: 550px;"></canvas>  
+  </div>
+  <!-- button back and subject table div-->
+  <div class="w3-container w3-content w3-center" style="max-width:2000px; margin: 30px 0 20px 0;">
+    <button onclick="toMainPage()" id="button">Back to table view</button>
+  </div> 
+  <div class="w3-container w3-cpntent w3-center" style="font-size: 11px; color: lightslategray; margin-bottom: 10px;">
+    For the purpose of better performance, the data on this plot has been downsampled from 500Hz to 100Hz.
+  </div>
+  <!-- Footer div (consists of two) -->
+  <div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px;">
+    <div class="w3-container w3-cell">
+      <p>Braintrip</p>
+      <p><a href="http://www.braintrip.net/en">What is BrainTrip</a></p>
+      <a href="http://www.braintrip.net/en"><img src="./assets/btlogo.png" alt="BrainTrip_logo" style="max-width: 30px;"></a>
+    </div>
+    <div class="w3-container w3-cell">
+      <p>Swarm</p>
+      <p><a href="https://docs.ethswarm.org/">What is Swarm?</a></p>
+      <a href="https://docs.ethswarm.org/"><img src="./assets/swarm.png" alt="Swarm logo" style="max-width: 30px;">
+    </div>
+  </div> 
+  <div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px; padding-bottom: 30px;">
+    <div class="w3-container">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" style="padding-top: 20px;">w3.css</a></p>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/main_page_functions.js"></script>
+</html>

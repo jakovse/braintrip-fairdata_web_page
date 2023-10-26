@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>BrainTrip x Swarm</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+  <!-- Info part -->
+  <div class="w3-container w3-content w3-center" style="max-width:800px" id="about">
+    <img src="./assets/braintripXswarm.png" alt="braintripXswarm" style="max-width: 600px; padding-top: 20px;">
+    <h2 class="w3-wide">ABOUT</h2>
+    <p class="w3-justify">The BrainTrip project is attempting to use quantitative analysis of EEG data to predict cognitive decline and dementia in seniors. We've performed several hundred EEG recordings using a 24-channel EEG amplifier and saline sponge based EEG caps. Our EEG data is encoded in the BrainVision format. Each EEG recoring has 3 associated files: a binary raw EEG file (.egg), and two ascii files containing marker (.vmrk) and header (.vhdr) information about special events in the EEG (markers) and channel names and positions (header).
+
+        Further information on BrainVision format are available here
+        
+        To prepare your EEG data for upload, please convert your raw files to the BrainVison format for ease of use across different labs. Then follow the upload instructions.
+  </div>
+
+  <!-- Table and filters -->
+  <div class="filtersContainer"> 
+    <!-- filters -->  
+    <div class="filterContainer">
+      <input type="text" placeholder="Filter by Recording" id="value" class="filters" onchange="runFilter()" style="min-width: 200px;">
+      <button onclick="resetFilters()" class="refBtn" style="align-self: right; position:absolute; top:0; right: 10px;"><img id="btnImg" src="./assets/refresh_new.png" alt=""></button>
+    </div>    
+    <div class="filterContainer">
+      <input type="number" placeholder="Minimum Age" id="range" class="filters" pattern="[0-9]{1,5}" onchange="runFilter()">
+      <input type="number" placeholder="Maximum Age" id="range" class="filters" pattern="[0-9]{1,5}" onchange="runFilter()">
+      
+      
+    </div>
+    <div class="filterContainer">
+      <select type="select" id="value" class="filters" onchange="runFilter()">
+        <option value="">Filter by Sex</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="NS">N/A</option>
+      </select>
+      <select type="select" id="value" class="filters" onchange="runFilter()">
+        <option value="">Filter by Handedness</option>
+        <option value="L">Left</option>
+        <option value="R">Right</option>
+        <option value="A">N/A</option>
+      </select>
+    </div>    
+    <div class="filterContainer">
+      <input type="number" placeholder="Minimum Head Size" id="range" class="filters" pattern="[0-9]{1,3}" onchange="runFilter()">
+      <input type="number" placeholder="Maximum Head Size" id="range" class="filters" pattern="[0-9]{1,3}" onchange="runFilter()">
+    </div>   
+    <!--<button onclick="runFilter()" id="button">FILTER</button>-->
+    
+  </div><br>
+  <!-- table only -->
+  <div id="tableContainer" class="tableContainer">
+    <table id="mainTable" class="scrollTable">
+      <thead class="fixedHeader">
+        <tr>
+          <th>RECORDING</th>
+          <th>YEAR OF BIRTH</th>
+          <th>SEX</th>
+          <th>HANDEDNESS</th>
+          <th>HEAD SIZE</th>
+        </tr>
+      </thead>
+      <tbody class="scrollContent"></tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="buttonsContainer">
+  <button onclick="downloadFiles()" class="button" id="btnDownload" style="margin-right:20px" disabled>Download selected files</button>
+  <button onclick="toPlottingPage()" class="button" id="btnPlotPage" style="margin-left:20px" disabled>Show EEG recording</button>
+</div>   
+ 
+<!-- footer -->
+<div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px; padding-top: 10px;">
+  <div class="w3-container w3-cell">
+    <p>Braintrip</p>
+    <p><a href="http://www.braintrip.net/en">What is BrainTrip</a></p>
+    <a href="http://www.braintrip.net/en"><img src="./assets/btlogo.png" alt="BrainTrip_logo" style="max-width: 30px;"></a>
+  </div>
+  <div class="w3-container w3-cell">
+    <p>Swarm</p>
+    <p><a href="https://docs.ethswarm.org/">What is Swarm?</a></p>
+    <a href="https://docs.ethswarm.org/"><img src="./assets/swarm.png" alt="Swarm logo" style="max-width: 30px;">
+  </div>
+</div> 
+<div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px; padding-bottom: 30px;">
+  <div class="w3-container">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" style="padding-top: 20px;">w3.css</a></p>
+  </div>
+</div>
+
+<!-- add modules and libraries-->
+<script type="module" src="js/generate_table.js"></script>
+<script src="js/main_page_functions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>

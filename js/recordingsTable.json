@@ -1,0 +1,32 @@
+[
+  {
+    "File": "DefaultFile",
+    "Age": 74,
+    "Sex": "F",
+    "Handedness": "L"
+  },
+  {
+    "File": "EEG00001",
+    "Age": 68,
+    "Sex": "M",
+    "Handedness": "R"
+  },
+  {
+    "File": "EEG00002",
+    "Age": 70,
+    "Sex": "M",
+    "Handedness": "R"
+  },
+  {
+    "File": "EEG00003",
+    "Age": 89,
+    "Sex": "M",
+    "Handedness": "L"
+  },
+  {
+    "File": "EEG00034",
+    "Age": 54,
+    "Sex": "M",
+    "Handedness": "L"
+  }
+]
