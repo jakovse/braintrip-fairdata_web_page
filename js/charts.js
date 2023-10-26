@@ -192,9 +192,9 @@ function generateChartDict(data) {
           ticks: {
             display: false,
           },
-          /*
+          
           min: -4950,
-          max: 100,*/
+          max: 100,
           beginAtZero: false
         }
       }
