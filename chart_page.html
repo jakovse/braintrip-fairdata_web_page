@@ -27,14 +27,16 @@
     <canvas id="myChart" style="height: 550px;"></canvas>  
   </div>
   <!-- button back and subject table div-->
-  <div class="w3-container w3-content w3-center" style="max-width:2000px; margin: 30px 0 20px 0;">
+  <div class="w3-container w3-content w3-center buttonDiv" style="max-width:2000px; margin: 30px 0 20px 0;">
+    <button onclick="scrollChart('left')" id="button"><img id="btnImg" src="./assets/leftArrow.png" alt=""></button>
     <button onclick="toMainPage()" id="button">Back to table view</button>
+    <button onclick="scrollChart('right')" id="button"><img id="btnImg" src="./assets/rightArrow.png" alt=""></button>
   </div> 
   <div class="w3-container w3-cpntent w3-center" style="font-size: 11px; color: lightslategray; margin-bottom: 10px;">
     For the purpose of better performance, the data on this plot has been downsampled from 500Hz to 100Hz.
   </div>
   <!-- Footer div (consists of two) -->
-  <div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px;">
+  <div class="w3-content w3-center w3-cell-row w3-light-grey" style="max-width:2000px; padding-top: 10px;">
     <div class="w3-container w3-cell">
       <p>Braintrip</p>
       <p><a href="http://www.braintrip.net/en">What is BrainTrip</a></p>
@@ -57,4 +59,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="./js/charts.js"></script>
   <script src="./js/main_page_functions.js"></script>
+  </body>
 </html>

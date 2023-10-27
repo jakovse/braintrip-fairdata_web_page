@@ -94,9 +94,15 @@ tbody.scrollContent td, tbody.scrollContent tr td {
 }
 
 /* Buttons */
+.buttonDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
 #btnImg{
-	max-width: 30px;
-	height: auto;
+  padding: 3px 0 3px 0;
+	max-width: 50px;
+	height: 28px;
 }
 
 button.refBtn {

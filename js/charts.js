@@ -223,6 +223,18 @@ function scroller(keydown, chart) {
   chart.update();
 }
 
+function scrollChart(direction) {
+  
+  if ((direction == 'right') && (eegChart.options.scales.x.max < eegChart.data.labels.length-1)) {
+    eegChart.options.scales.x.min += 2.5;
+    eegChart.options.scales.x.max += 2.5;
+  } else if ((direction == 'left') && (eegChart.options.scales.x.min > 0)) {
+    eegChart.options.scales.x.min -= 2.5;
+    eegChart.options.scales.x.max -= 2.5;
+  }
+  eegChart.update();
+}
+
 
 readFile();
 
