@@ -1,4 +1,4 @@
-const filePath = "https://master.djikmwh17bdyr.amplifyapp.com/eegRecordings/"
+const filePath = "http://localhost:5500/eegRecordings/"
 const selectedRows = new Array(500).fill(false);
 
 function runFilter() {
