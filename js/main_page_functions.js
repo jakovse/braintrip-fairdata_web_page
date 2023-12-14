@@ -1,4 +1,4 @@
-const filePath = "http://localhost:5500/eegRecordings/"
+const filePath = window.location.href.replace("/index.html", "") + "/eegRecordings/";
 const selectedRows = new Array(500).fill(false);
 
 function runFilter() {
